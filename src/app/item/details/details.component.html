@@ -1,0 +1,18 @@
+<p>address works!</p>
+<form class="form" [formGroup]="address">
+    <div class="form-group">
+        <label for="city" class="control-label">city:</label>
+        <input class="form-control" id="city" formControlName="city" placeholder="Your city" appTrim [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
+        <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+            <div *ngIf="f.city.errors?.['required']">city is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="street" class="control-label">street:</label>
+        <input class="form-control" id="street" formControlName="street" placeholder="Your street" appTrim [ngClass]="{ 'is-invalid': submitted && f.street.errors }">
+        <div *ngIf="submitted && f.street.errors" class="invalid-feedback">
+            <div *ngIf="f.street.errors?.['required']">street is required</div>
+        </div>
+    </div>
+</form>
+
